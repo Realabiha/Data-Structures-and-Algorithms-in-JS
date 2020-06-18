@@ -1,8 +1,8 @@
 # babel 
 [参考文章](https://juejin.im/post/5a79adeef265da4e93116430#heading-12)
-**作用** 
-- 将ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。
-**配置**
+- 作用 
+**将ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。**
+- 配置
 ``` js
 {
   "presets": [
