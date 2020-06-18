@@ -75,4 +75,5 @@
 **facebook出的测试**
 **jest25.0支持node8.0**
 **jest25.0+支持node10.0+**
+**npx jest -v测试安装是否成功支持node5.2+**
 [官方文档](https://jestjs.io/docs/zh-Hans/getting-started.html#%E4%BD%BF%E7%94%A8-babel)
