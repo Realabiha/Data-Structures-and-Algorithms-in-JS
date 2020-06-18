@@ -3,6 +3,7 @@
 - 作用 
 **将ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。**
 - 配置
+**yarn add --dev babel-jest @babel/core @babel/preset-env安装babel是为了使用ES6语法**
 ``` js
 {
   "presets": [
@@ -22,13 +23,9 @@
   }
 }
 // `preset(预设)` array  
-// env
+// 官方预设 "babel/preset-env"
 "presets": [
-    [
-        "env", 
-        options
-    ],
-    "stage-2"
+    ["env"]
 ]
 // eg env
 "presets": [
@@ -45,13 +42,15 @@
 ],
 // 官方预设 "@babel/preset-env"
 "presets": [
-		[
-			"@babel/preset-env", 
-			{
-				"targets": {"node": "current"}
-			}
-		]
-	],
+    [
+    '@babel/preset-env',
+    {
+        targets: {
+        node: 'current',
+        },
+    },
+    ],
+],
 // `plugin(插件)` array
 "plugins": [
     "syntax-dynamic-import",["transform-runtime"]
@@ -73,7 +72,7 @@
 }
 ```
 # jest
-- **facebook出的测试**
+- **facebook出的测试工具**
 - **jest25.0支持node8.0**
 - **jest25.0+支持node10.0+**
 - **npx jest -v测试安装是否成功支持node5.2+**
