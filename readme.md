@@ -1,5 +1,5 @@
 # babel 
-[参考文章](https://juejin.im/post/5a79adeef265da4e93116430#heading-12)
+[参考文章](https://juejin.im/post/5cf45f9f5188254032204df1)
 - 作用 
 **将ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。**
 - 配置
@@ -77,3 +77,9 @@
 - **jest25.0+支持node10.0+**
 - **npx jest -v测试安装是否成功支持node5.2+**
 [官方文档](https://jestjs.io/docs/zh-Hans/getting-started.html#%E4%BD%BF%E7%94%A8-babel)
+# 概念
+- 数据结构 计算机储存、组织数据的方式
+- 算法 一系列实现计算目的步骤
+- 程序 数据结构+算法
+- 算法差异由时间复杂度和空间复杂度来衡量，并且随着数据的增大差异越来越明显 T(n)=O(f(n))
+- 数据结构与算法不是完全独立的，有些数据结构中用到了算法，有些算法有利用了某些数据结构
