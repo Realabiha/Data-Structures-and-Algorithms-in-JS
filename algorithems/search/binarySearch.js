@@ -44,11 +44,11 @@ function binarySearch(arr, target){
             console.log(mid);
             return mid;
         }
-        // 中间值大，移动右指针
+        // 目标值小于中间值，右指针左移
         if(arr[mid] > target){
             right = mid - 1;
         }
-        // 中间值小， 移动左指针
+        // 反之
         if(arr[mid] < target){
             left = mid + 1;
         }
