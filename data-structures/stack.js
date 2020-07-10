@@ -1,13 +1,14 @@
-// es6 创建一个模拟栈数据结构的类
-// 实现一个likeStack类,先进后出
+// 栈 类比生活中的容器 先进后出
+// push pop size peek
 class likeStack{
     constructor(){
         this.length = 0;
         this.storage = {};
     }
-    add(val){
+    push(val){
         this.length ++;
         this.storage[this.length] = val;
+        return this;
     }
     pop(){
         if(this.length === 0){
@@ -23,6 +24,14 @@ class likeStack{
         return this.length;
     }
     peek(){
-        return this.storage[this.length];
+        if(this.length < 1) return undefined;
+        return this.storage[this.length - 1];
     }
 }
+
+// let ls = new likeStack();
+// ls.peek();
+// ls.pop();
+// ls.size();
+// ls.push(1);
+// console.dir(ls.pop());
