@@ -71,20 +71,40 @@ class PriorityQueue{
         this.size = 0;
     }
     enqueue(obj){
-        if(this.isEmpty() || this.queue[this.size - 1].priority <= obj.priority){
+        // if(this.isEmpty() || this.queue[this.size - 1].priority <= obj.priority){
+        //     this.queue.push(obj);
+        // }else if(this.queue[0].priority > obj.priority){
+        //     this.queue.unshift(obj);
+        // }
+        // else{
+        //     for(let i = 0; i < this.size - 1; i ++){
+        //         let left = this.queue[i], right = this.queue[i + 1];
+        //         if(left.priority <= obj.priority && right.priority > obj.priority){
+        //             this.queue.splice(i+1, 0, obj);
+        //             break;
+        //         }
+        //     }
+        // }
+
+        let added = false;
+        if(this.isEmpty()){
             this.queue.push(obj);
-        }else if(this.queue[0].priority > obj.priority){
-            this.queue.unshift(obj);
-        }
-        else{
-            for(let i = 0; i < this.size - 1; i ++){
-                let left = this.queue[i], right = this.queue[i + 1];
-                if(left.priority <= obj.priority && right.priority > obj.priority){
-                    this.queue.splice(i+1, 0, obj);
+        }else{
+            let i = 0;
+            while(i < this.size){
+                if(obj.priority <= this.queue[i].priority){
+                    this.queue.splice(i, 0, obj);
+                    added = true;
                     break;
                 }
+                i ++
             }
+
         }
+        if(!added){
+            this.queue.push(obj);
+        }
+        
         this.size ++;
         return this;
     }
@@ -101,3 +121,10 @@ class PriorityQueue{
         return this.size == 0;
     }
 }
+
+let pq = new PriorityQueue();
+pq.enqueue({value: 1, priority: 3})
+.enqueue({value: 2, priority: 1})
+.enqueue({value: 3, priority: 3})
+.enqueue({priority: 6});
+console.log(pq)

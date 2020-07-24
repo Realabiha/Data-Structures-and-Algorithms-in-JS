@@ -16,6 +16,7 @@ class Node{
 
 class Linkedlist {
     constructor(){
+        // head pointer
         this.head = new Node('head');
     }
     
