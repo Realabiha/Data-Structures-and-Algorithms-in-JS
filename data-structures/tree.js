@@ -1,7 +1,7 @@
 // binary tree
 // add find remove findMin findMax isPresent
 // findMinHeight findMaxHeight isBalance
-// preOrder inOrder postOrser
+// preOrder前序中左右 inOrder中序左中右 postOrder后续左右中
 // levelOrder
 
 
@@ -18,23 +18,6 @@ class Tree{
         this.root = null;
     }
     add(val){
-        // let target = this.root;
-        // if(!target){ 
-        //     this.root = new Node(val); 
-        //     return this;
-        // };
-        // const addNode = function(node, val){
-        //     if(node.value < val && node.right){
-        //         addNode(node.right, val)
-        //     }
-        //     if(node.value > val && node.left){
-        //         addNode(node.left, val);
-        //     }
-        //     node.value > val && !node.left ? node.left = new Node(val) : '';
-        //     node.value < val && !node.right ? node.right = new Node(val) : ''; 
-        // }
-        // addNode(target, val);
-
         let node = this.root;
         if(node){
             const addNode = function(node, val){
@@ -152,6 +135,54 @@ class Tree{
             
         }
         this.root = removeNode(this.root, val)
+    }
+    inOrder(){
+        let node = this.root;
+        if(!node) return node;
+        const result = [];
+        const traversal = function(node){
+            node.left && travelsal(node.left)
+            result.push(node.value);
+            node.right && travelsal(node.right)
+        }
+        traversal(node);
+        return result;
+    }
+    preOrder(){
+        let node = this.root;
+        if(!node) return node;
+        const result = [];
+        const traversal = function(node){
+            result.push(node.value);
+            node.left && traversal(node.left);
+            node.right && traversal(node.right);
+        }
+        traversal(node);
+        return target;
+    }
+    postOrder(){
+        let node = this.root;
+        if(!node) return node;
+        const target = [];
+        const traversal = function(){
+            node.left && traversal(node.left);
+            node.right && traversal(node.right);
+            target.push(node.value);
+        }
+        traversal(node);
+        return target;
+    }
+    levelOrder(){
+        let node = this.root;
+        if(!node) return node;
+        const queue = [], target = [];
+        queue.push(node);
+        while(queue.length > 0){
+            target.push(queue.shift().value);
+            node.left && queue.push(node.left);
+            node.right && queue.push(node.right);
+        }
+        return target;
     }
 }
 
